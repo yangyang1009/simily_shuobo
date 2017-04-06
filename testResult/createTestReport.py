@@ -6,7 +6,6 @@
 # @File    : runTest.py
 # @Software: PyCharm
 import unittest,time
-import os
 from HTMLTestRunner import  HTMLTestRunner
 
 #指定测试用例为当前文件夹下的test_case 目录
@@ -37,7 +36,4 @@ if __name__=='__main__':
     print("现在时间是"+now)
     # 定义报告存放路径
     filename = test_report_dir+'/'+ now +'_result.html'
-    print(filename)
-    t.createReport(test_report_dir,test_case_run_dir,filename,
-                   str(os.path.dirname(os.path.dirname(__file__))).replace('\\','/').split('E:/PyCharm_Workspace/')[1]+'测试报告',
-                   '测试执行情况：')
+    t.createReport(test_report_dir,test_case_run_dir,filename,'测试报告', '测试执行情况：')

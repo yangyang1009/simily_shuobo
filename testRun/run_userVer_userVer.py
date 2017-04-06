@@ -9,7 +9,7 @@ import unittest
 import time
 from testCase.models import myUnit
 from testCase.models.userVer.userVer import UserVer
-from util.commonUtils.getResultImage import getResultImage
+from testResult.getResultImage import getResultImage
 from time import sleep
 import random
 class RunUserVer(myUnit.MyTest):
@@ -67,7 +67,6 @@ class RunUserVer(myUnit.MyTest):
         self.assertEqual(po.pwd_error_remind(),"用户名或密码不正确!")
         imagetest = getResultImage()
         imagetest.insert_image(self.driver,"uname_pwd_error.jpg")
-        print("图片已经保存成功",imagetest.insert_image(self.driver,"uname_pwd_error.jpg"))
 
     def test_userRegist_run(self):
         pass
