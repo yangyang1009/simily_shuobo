@@ -5,13 +5,13 @@
 # @Site    : 
 # @File    : BasePage.py
 # @Software: PyCharm
-from testCase import MyUnit
+from testCase.models import myUnit
 from selenium import webdriver
 class BasePage(object):
     '''
     页面基础类，用于所有页面的继承
     '''
-    burl ="http://168.160.192.92:8080/fuhe24-manage"
+    burl ="http://login.test.wanfangdata.com.cn/Login.aspx"
     def __init__(self,selenium_driver,base_url= burl,parent=None):
         self.base_url = base_url
         self.driver = selenium_driver

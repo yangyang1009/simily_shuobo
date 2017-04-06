@@ -5,11 +5,8 @@
 # @Site    : 
 # @File    : MyUnit.py
 # @Software: PyCharm
-
-from selenium import webdriver
 from browserDriver.setBrowser import setBrowser
 import unittest
-import os
 class MyTest(unittest.TestCase):
     def setUp(self):
         s= setBrowser()
