@@ -13,7 +13,7 @@ class getResultImage():
         base_dir = os.path.dirname(os.path.dirname(__file__))
         base_dir = str(base_dir)
         base_dir= base_dir.replace('\\','/')
-        file_path = base_dir + "/testResult/testImages"+file_name
+        file_path = base_dir + "/testResult/testImages/"+file_name
         #driver.save_screenshot(file_path)
         driver.get_screenshot_as_file(file_path)
 
