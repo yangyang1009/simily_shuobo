@@ -5,16 +5,13 @@
 # @Site    : 
 # @File    : run_userVer.py
 # @Software: PyCharm
-
-from HTMLTestRunner import  HTMLTestRunner
+import unittest
+import time
 from testCase.models import myUnit
 from testCase.models.userVer.userVer import UserVer
-from testResult.getResultImage import getResultImage
-import random
-import time
-import unittest
+from util.commonUtils.getResultImage import getResultImage
 from time import sleep
-
+import random
 class RunUserVer(myUnit.MyTest):
     def test_userLogout_run(self):
         pass
@@ -70,22 +67,13 @@ class RunUserVer(myUnit.MyTest):
         self.assertEqual(po.pwd_error_remind(),"用户名或密码不正确!")
         imagetest = getResultImage()
         imagetest.insert_image(self.driver,"uname_pwd_error.jpg")
+        print("图片已经保存成功",imagetest.insert_image(self.driver,"uname_pwd_error.jpg"))
+
     def test_userRegist_run(self):
         pass
     def test_forgetPwd_run(self):
         pass
 if __name__=="__main__":
-    now = time.strftime("%Y-%m-%d %H_%M_%S")
-    test_report_dir = '../testResult'
-    test_case_run_dir ='../testRun'
-    filename = test_report_dir+'/'+ now +'_result.html'
-    discover_cases = unittest.defaultTestLoader.discover(test_case_run_dir,pattern='run_*.py',top_level_dir=None)
-    fp= open(filename,'wb')
-    print(filename)
-    # 定义测试报告
-    runner = HTMLTestRunner(stream=fp,title="测试报告",description="测试运行情况")
-    runner.run(discover_cases) #运行测试用例
-    fp.close()#关闭报告文件
-    # unittest.main()
+    unittest.main()
 
 
