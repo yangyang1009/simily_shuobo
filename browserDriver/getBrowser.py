@@ -22,10 +22,10 @@ def browser():
     return driver
 
 
-if __name__=='__main__':
-    dr=browser()
-    dr.implicitly_wait(10)
-    dr.get("http://www.baidu.com/")
-    dr.find_element_by_id("kw").send_keys("selenium 测试")
-    dr.find_element_by_id("su").click()
-    dr.quit()
+# if __name__=='__main__':
+#     dr=browser()
+#     dr.implicitly_wait(10)
+#     dr.get("http://www.baidu.com/")
+#     dr.find_element_by_id("kw").send_keys("selenium 测试")
+#     dr.find_element_by_id("su").click()
+#     dr.quit()
