@@ -7,12 +7,12 @@
 # @Software: PyCharm
 import unittest
 import time
-from testCase.models import myUnit
+from testCase.models import myUnitFirefox
 from testCase.models.userVer.userVer import UserVer
 from testResult.getResultImage import getResultImage
 from time import sleep
 import random
-class RunUserVer(myUnit.MyTest):
+class RunUserVer(myUnitFirefox.UnitFirefox):
     def test_userLogout_run(self):
         pass
 

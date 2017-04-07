@@ -9,9 +9,9 @@ from selenium import  webdriver
 import unittest
 from HTMLTestRunner import HTMLTestRunner
 import time
-from testCase.models import myUnit
+from testCase.models import myUnitFirefox
 
-class RunFolderManage(MyUnit.MyTest):
+class RunFolderManage(myUnitFirefox.UnitFirefox):
     def test_folderSelect_run(self):
         pass
     def test_serchContentReset_run(self):

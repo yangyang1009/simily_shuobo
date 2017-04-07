@@ -9,9 +9,9 @@ from selenium import  webdriver
 import unittest
 from HTMLTestRunner import HTMLTestRunner
 import time
-from testCase.models import myUnit
+from testCase.models import myUnitFirefox
 
-class RunManualEntryDeptStruc(MyUnit.MyTest):
+class RunManualEntryDeptStruc(myUnitFirefox.UnitFirefox):
     def test_addDeptStruc_run(self):
         pass
     def test_resetDeptStruc_run(self):

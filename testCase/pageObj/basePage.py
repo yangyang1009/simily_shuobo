@@ -5,7 +5,7 @@
 # @Site    : 
 # @File    : BasePage.py
 # @Software: PyCharm
-from testCase.models import myUnit
+from testCase.models import myUnitFirefox
 from selenium import webdriver
 class BasePage(object):
     '''

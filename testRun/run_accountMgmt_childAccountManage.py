@@ -9,9 +9,9 @@ from selenium import  webdriver
 import unittest
 from HTMLTestRunner import HTMLTestRunner
 import time
-from testCase.models import myUnit
+from testCase.models import myUnitFirefox
 
-class RunChildAccountManage(MyUnit.MyTest):
+class RunChildAccountManage(myUnitFirefox.UnitFirefox):
     def test_createChildAccountPackup_run(self):
         pass
     def test_createChildaccount_run(self):

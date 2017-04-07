@@ -9,6 +9,8 @@ from selenium import  webdriver
 import unittest
 from HTMLTestRunner import HTMLTestRunner
 import time
-from testCase.models import myUnit
+from testCase.models import myUnitFirefox
 
-class RunAccountInfo(MyUnit.MyTest):
+class RunAccountInfo(myUnitFirefox.UnitFirefox):
+    def __init__(self):
+        pass

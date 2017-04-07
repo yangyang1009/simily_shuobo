@@ -9,7 +9,7 @@ from selenium import webdriver
 import unittest
 from HTMLTestRunner import HTMLTestRunner
 import time
-from testCase.models import myUnit
+from testCase.models import myUnitChrome
 from browserDriver.setBrowser import setBrowser
 from testCase.models.buildDeptStruc.massProduceDeptStruc import massProducePage
 from testCase.models.userVer.userVer import UserVer
@@ -17,7 +17,7 @@ from time import sleep
 from testResult.getResultImage import getResultImage
 
 
-class RunMassProduceDeptStruc(myUnit.MyTest):
+class RunMassProduceDeptStruc(myUnitChrome.UnitChrome):
     def user_login(self):
         '''用户登录'''
         user_login = UserVer(self.driver)

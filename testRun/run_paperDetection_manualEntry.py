@@ -9,9 +9,9 @@ from selenium import  webdriver
 import unittest
 from HTMLTestRunner import HTMLTestRunner
 import time
-from testCase.models import myUnit
+from testCase.models import myUnitFirefox
 
-class RunManualEntry(MyUnit.MyTest):
+class RunManualEntry(myUnitFirefox.UnitFirefox):
     def test_addFolder_run(self):
         pass
     def test_startTest_run(self):

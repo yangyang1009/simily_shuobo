@@ -1,16 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2017/3/13 13:25
+# @Time    : 2017/4/7 17:48
 # @Author  : Nxy
 # @Site    : 
-# @File    : MyUnit.py
+# @File    : myUnitChrome.py
 # @Software: PyCharm
 from browserDriver.setBrowser import setBrowser
 import unittest
-class MyTest(unittest.TestCase):
+class UnitChrome(unittest.TestCase):
     def setUp(self):
         s= setBrowser()
-        #self.driver=s.startFirefox()
         self.driver=s.startChrome("../browserDriver/chromedriver.exe")
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
@@ -20,7 +19,7 @@ class MyTest(unittest.TestCase):
 
 #
 # if __name__=='__main__':
-#     t = MyTest()
+#     t = UnitChrome()
 #     d = t.setUp()
 #     d.get("http://www.baidu.com")
 

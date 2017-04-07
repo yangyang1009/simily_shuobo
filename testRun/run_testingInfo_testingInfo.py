@@ -9,9 +9,9 @@ from selenium import  webdriver
 import unittest
 from HTMLTestRunner import HTMLTestRunner
 import time
-from testCase.models import myUnit
+from testCase.models import myUnitFirefox
 
-class RunTestingInfo(MyUnit.MyTest):
+class RunTestingInfo(myUnitFirefox.UnitFirefox):
     def test_findTestingInfo_run(self):
         pass
     def test_resetInputInfo_run(self):
