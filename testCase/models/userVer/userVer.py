@@ -5,10 +5,6 @@
 # @Site    : 
 # @File    : userVer.py
 # @Software: PyCharm
-from selenium import  webdriver
-import unittest
-from testCase.pageObj.basePage import BasePage
-import time
 from testCase.pageObj.basePage import BasePage
 from selenium.webdriver.common.by import By
 from time import sleep
@@ -22,15 +18,9 @@ class UserVer(BasePage):
     uname_error_remind_loc=(By.ID,"useridError")
     # 密码为空，密码用户名错误提示均使用这个
     pwd_error_remind_loc=(By.ID,"passwordError")
-    user_login_success_loc=(By.XPATH,"/html/body/div[1]/div[5]/div/div[2]/div/span[1]")
     #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    #进入论文检测服务
-    enter_service_href=(By.ID,"navService")
-    enter_service_name=(By.LINK_TEXT,"论文相似性检测")
-    enter_org_service_name=(By.ID,"business")
-    enter_shuobo_service_name=(By.CSS_SELECTOR,"div.panel-footer > button.btn.btn-primary")
-    enter_shuobo_success="http://check.test.wanfangdata.com.cn/md/"
-    enter_shuobo_fail="http://login.test.wanfangdata.com.cn/Login.aspx"
+    # 硕博 相似性检测 进入标志
+    user_login_success_loc =(By.ID,"groupAccountKey")
 
     def userLogin(self,username,password):
         '''
@@ -40,7 +30,7 @@ class UserVer(BasePage):
         :return: 无返回值
         '''
         '''获取的用户名密码登录'''
-        self.open("")
+        self.open("/")
         self.login_username(username)
         self.login_password(password)
         self.login_button()
@@ -68,37 +58,9 @@ class UserVer(BasePage):
     #密码错误提示
     def pwd_error_remind(self):
         return self.find_element(*self.pwd_error_remind_loc).text
-    #登录成功后显示的用户名
+    #登录成功后显示当前登录的用户名
     def user_login_success_verify(self):
         return self.find_element(*self.user_login_success_loc).text
 
-    def userEnterThurber(self):
-        '''
-        用户进入硕博论文检测服务
-        :return:
-        '''
-        self.enter_serviceHref()
-        sleep(1)
-        self.enter_serviceName()
-        sleep(1)
-        self.enter_org_service()
-        sleep(1)
-        self.enter_shuobo_service()
-        sleep(5)
-
-    #进入服务选择
-    def enter_serviceHref(self):
-        self.find_element(*self.enter_service_href).click()
-    #开始选择相似性检测
-    def enter_serviceName(self):
-        self.find_element(*self.enter_service_name).click()
-    #鼠标悬停在机构专属服务处
-    def enter_org_service(self):
-        self.find_element(*self.enter_org_service_name).move_to_element()
-    #选择硕博论文相似性检测
-    def enter_shuobo_service(self):
-        self.find_element(*self.enter_shuobo_service_name).click()
-
     def userLogout(self):
-
         pass

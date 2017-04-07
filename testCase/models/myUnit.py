@@ -11,6 +11,7 @@ class MyTest(unittest.TestCase):
     def setUp(self):
         s= setBrowser()
         self.driver=s.startFirefox()
+        #self.driver=s.startChrome("../browserDriver/chromedriver.exe")
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
     def tearDown(self):
