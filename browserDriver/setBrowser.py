@@ -27,8 +27,14 @@ class setBrowser ():
     driverPath： chrome 浏览器的驱动放置位置
     '''
     def startChrome (self, driverPath):
-        driver = webdriver.Chrome (driverPath)  # 调用chrome浏览器
+        #设置chrome自动下载到指定路径
+        options = webdriver.ChromeOptions()
+        prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': 'F:\\resultlog'}
+        options.add_experimental_option('prefs', prefs)
+
+        driver = webdriver.Chrome (driverPath, chrome_options=options)  # 调用chrome浏览器
         return driver
+
     '''
     打开ie浏览器，目前win10 系统是 Microsoft Edge
     而不是ie 所以该方法在win10 不可用
