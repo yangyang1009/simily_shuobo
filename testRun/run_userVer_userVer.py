@@ -65,7 +65,7 @@ class RunUserVer(myUnit.MyTest):
         self.user_login_verify_run(username="companyusers",password="f")
         sleep(2)
         userver=UserVer(self.driver)
-        self.assertEqual(userver.user_login_success_verify(),"本地上传")
+        self.assertEqual(userver.user_login_success_verify(),"companyusers服务站")
         imagetest = getResultImage()
         imagetest.insert_image(self.driver,"user_login_ok.jpg")
 
